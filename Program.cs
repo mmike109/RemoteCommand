@@ -21,8 +21,20 @@ namespace RemoteCommand
             //var psInfoInstaller = new Installer(@"", @"", @"C:\Windows\System32");
             //var psInfoInstaller = new Installer(@"", @"", @"C:\DFO - MPO");
 
-            psExexInstaller.combinePath();
+            //psExexInstaller.combinePath();
             //psInfoInstaller.combinePath();
+
+            var excelRead = new ExcelReader(@"C:\DFO-MPO\UerWin10CleanUp.xlsx",1);
+
+            int i = 0;
+            while(i < excelRead.RowCount(0,0))
+
+            {
+                i++;
+                System.Windows.Forms.MessageBox.Show(excelRead.ReadCell(i, 0));
+            }
+           
+            
             //var fileName = "PsExec.exe";
             //var sourceFile = @"C:\Users\GornikM\Downloads\PSTools (3)";
             //string target = @"C:\Windows\System32";
