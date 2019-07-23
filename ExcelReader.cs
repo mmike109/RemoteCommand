@@ -22,19 +22,20 @@ namespace RemoteCommand
         
         public string ReadCell(int i , int j)
         { 
-            //for( i = 1; i< 100;i++)
-            //{
+
                 i++;
                 j++;
-            //}
-           
 
-            if (ws.Cells[i, j].Value2 != null)
-                return 
-                    ws.Cells[i, j].Value2;
-            else {
-                return "";
+            while (true)
+            {
+                if (ws.Cells[i, j].Value2 != null)
+                {
+                    return
+                        ws.Cells[i, j].Value2;
+                }
+
             }
+          
         }
 
 
@@ -44,7 +45,7 @@ namespace RemoteCommand
             j++;
 
 
-            if((int)ws.Cells[i, j].Value2 != 0)
+            if(ws.Cells[i, j].Value2 != null)
                  return ws.Rows.Count;
             else
             {

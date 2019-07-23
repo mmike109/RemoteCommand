@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Diagnostics;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -33,8 +34,15 @@ namespace RemoteCommand
                 i++;
                 System.Windows.Forms.MessageBox.Show(excelRead.ReadCell(i, 0));
             }
-           
-            
+
+            Process process = new Process();
+            ProcessStartInfo startInfo = new ProcessStartInfo();
+            startInfo.FileName = "cmd.exe";
+            //startInfo.Arguments = "/C copy /b Image1.jpg + Archive.rar Image2.jpg";
+            process.StartInfo = startInfo;
+            process.Start();
+
+
             //var fileName = "PsExec.exe";
             //var sourceFile = @"C:\Users\GornikM\Downloads\PSTools (3)";
             //string target = @"C:\Windows\System32";
