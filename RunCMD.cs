@@ -11,7 +11,7 @@ namespace RemoteCommand
     class RunCMD
     {
 
-       
+
 
         //public static void Main()
         //{
@@ -25,8 +25,34 @@ namespace RemoteCommand
         //    process.StartInfo = startInfo;
         //    process.Start();
         //}
-        
-        
+
+        //public static string ExecuteCommandAsAdmin(string command,string compNmae)
+            public static string ExecuteCommandAsAdmin(string command)
+        {
+
+            ProcessStartInfo procStartInfo = new ProcessStartInfo()
+            {
+                RedirectStandardError = true,
+                RedirectStandardOutput = true,
+                UseShellExecute = false,
+                CreateNoWindow = true,
+                FileName = "runas.exe",
+                Arguments = "/user:Administrator \"cmd /K " + command + "\""
+            };
+
+            using (Process proc = new Process())
+            {
+                proc.StartInfo = procStartInfo;
+                proc.Start();
+
+                string output = proc.StandardOutput.ReadToEnd();
+
+                if (string.IsNullOrEmpty(output))
+                    output = proc.StandardError.ReadToEnd();
+
+                return output;
+            }
+        }
 
     }
 }
