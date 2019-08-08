@@ -18,26 +18,28 @@ namespace RemoteCommand
 
 
             string compName = Environment.MachineName;
-            var psExexInstaller = new Installer(@"PsExec.exe", @"C:\Windows\System32", @"\\142.130.107.100\Dump\GornikM");
-            var psInfoInstaller = new Installer(@"PsInfo.exe", @"C:\Windows\System32", @"\\142.130.107.100\Dump\GornikM");
+            //var psExexInstaller = new Installer(@"PsExec.exe", @"C:\Windows\System32", @"\\142.130.107.100\Dump\GornikM");
+            //var psInfoInstaller = new Installer(@"PsInfo.exe", @"C:\Windows\System32", @"\\142.130.107.100\Dump\GornikM");
 
 
             //psExexInstaller.combinePath();
             //psInfoInstaller.combinePath();
 
             var excelRead = new ExcelReader(@"C:\DFO-MPO\UerWin10CleanUp.xlsx",1);
-
+            var result = RunCMD.ExecuteCommandAsAdmin(@"ping wnonbur9035507");
+            Console.WriteLine(result);
             int i = 0;
             while(i < excelRead.RowCount(0,0))
 
             {
                 i++;
                 System.Windows.Forms.MessageBox.Show(excelRead.ReadCell(i, 0));
-                i.ToString();
-               // var excecuteAsAdmin = new RunCMD();
-               // RunCMD.ExecuteCommandAsAdmin(excelRead.ReadCell(i, 0));
-                RunCMD.ExecuteCommandAsAdmin("@ping wnonbur9035507");
-
+                // i.ToString();
+                // var excecuteAsAdmin = new RunCMD();
+                // RunCMD.ExecuteCommandAsAdmin(excelRead.ReadCell(i, 0));
+                
+                //RunCMD.ExecuteCommandAsAdmin(@"ping wnonbur9035507");
+                
                 //Process process = new Process();
                 //ProcessStartInfo startInfo = new ProcessStartInfo();
                 //startInfo.FileName = "cmd.exe";

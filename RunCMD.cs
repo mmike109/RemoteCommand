@@ -27,20 +27,51 @@ namespace RemoteCommand
         //}
 
         //public static string ExecuteCommandAsAdmin(string command,string compNmae)
-            public static string ExecuteCommandAsAdmin(string command)
+        //    public static string ExecuteCommandAsAdmin(string command)
+        //{
+
+        //    ProcessStartInfo procStartInfo = new ProcessStartInfo()
+        //    {
+        //        RedirectStandardError = true,
+        //        RedirectStandardOutput = true,
+        //        UseShellExecute = false,
+        //        CreateNoWindow = true,
+        //        FileName = "runas.exe",
+        //        Arguments = "/user:Administrator \"cmd /K " + command + "\""
+        //    };
+
+        //    using (Process proc = new Process())
+        //    {
+        //        proc.StartInfo = procStartInfo;
+        //        proc.Start();
+
+        //        string output = proc.StandardOutput.ReadToEnd();
+
+        //        if (string.IsNullOrEmpty(output))
+        //            output = proc.StandardError.ReadToEnd();
+
+        //        return output;
+        //    }
+        //}
+        public static string ExecuteCommandAsAdmin(string command)
         {
 
-            ProcessStartInfo procStartInfo = new ProcessStartInfo()
-            {
-                RedirectStandardError = true,
-                RedirectStandardOutput = true,
-                UseShellExecute = false,
-                CreateNoWindow = true,
-                FileName = "runas.exe",
-                Arguments = "/user:Administrator \"cmd /K " + command + "\""
-            };
 
+            ProcessStartInfo procStartInfo = new ProcessStartInfo();
+
+
+            procStartInfo.FileName = "cmd.exe";
+            //e.ReadCell(i, 0);
+            procStartInfo.Arguments = "/ user:Administrator \"cmd /C " + command + "\"";
+            procStartInfo.RedirectStandardOutput = true;
+            procStartInfo.RedirectStandardError = true;
+            procStartInfo.UseShellExecute = false;
+            procStartInfo.RedirectStandardInput = true;
+            procStartInfo.CreateNoWindow = true;
+           
             using (Process proc = new Process())
+
+
             {
                 proc.StartInfo = procStartInfo;
                 proc.Start();
@@ -53,6 +84,5 @@ namespace RemoteCommand
                 return output;
             }
         }
-
     }
 }

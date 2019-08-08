@@ -1,8 +1,8 @@
-C:\Users\GornikM\source\repos\RemoteCommand\obj\Debug\RemoteCommand.csprojAssemblyReference.cache
-C:\Users\GornikM\source\repos\RemoteCommand\obj\Debug\RemoteCommand.csproj.CoreCompileInputs.cache
 C:\Users\GornikM\source\repos\RemoteCommand\bin\Debug\RemoteCommand.exe.config
 C:\Users\GornikM\source\repos\RemoteCommand\bin\Debug\RemoteCommand.exe
 C:\Users\GornikM\source\repos\RemoteCommand\bin\Debug\RemoteCommand.pdb
+C:\Users\GornikM\source\repos\RemoteCommand\obj\Debug\RemoteCommand.csproj.ResolveComReference.cache
+C:\Users\GornikM\source\repos\RemoteCommand\obj\Debug\RemoteCommand.csproj.CoreCompileInputs.cache
 C:\Users\GornikM\source\repos\RemoteCommand\obj\Debug\RemoteCommand.exe
 C:\Users\GornikM\source\repos\RemoteCommand\obj\Debug\RemoteCommand.pdb
-C:\Users\GornikM\source\repos\RemoteCommand\obj\Debug\RemoteCommand.csproj.ResolveComReference.cache
+C:\Users\GornikM\source\repos\RemoteCommand\obj\Debug\RemoteCommand.csprojAssemblyReference.cache
